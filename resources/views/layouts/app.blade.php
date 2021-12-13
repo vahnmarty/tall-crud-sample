@@ -22,6 +22,13 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"
             defer></script>
+    @livewireStyles
+
+    <style>
+        [x-cloak] {
+            display: none;
+        }
+    </style>
 </head>
 
 <body class="h-full font-sans antialiased">
@@ -33,6 +40,7 @@
             {{ $slot ?? '' }}
         </div>
     </div>
+    @livewireScripts
 
 </body>
 
