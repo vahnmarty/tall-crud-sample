@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\Users\ManageUsers;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'users'], function(){
-    //Route::get('/', ManageUsers::class);
+    Route::get('/', ManageUsers::class);
 });
 
 Route::get('/dashboard', function () {
