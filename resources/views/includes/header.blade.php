@@ -11,8 +11,7 @@
                          alt="Workflow">
                 </div>
                 <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
-                    <!-- Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
-                    <a href="#"
+                    <a href="{{ url('users') }}"
                        class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 border-b-2 border-indigo-500"
                        aria-current="page">
                         Users
@@ -67,30 +66,17 @@
                          aria-orientation="vertical"
                          aria-labelledby="user-menu-button"
                          tabindex="-1">
-                        <!-- Active: "bg-gray-100", Not Active: "" -->
-                        <a href="#"
-                           class="block px-4 py-2 text-sm text-gray-700"
-                           role="menuitem"
-                           tabindex="-1"
-                           id="user-menu-item-0">
-                            Your Profile
-                        </a>
 
-                        <a href="#"
-                           class="block px-4 py-2 text-sm text-gray-700"
-                           role="menuitem"
-                           tabindex="-1"
-                           id="user-menu-item-1">
-                            Settings
-                        </a>
+                        <form method="POST"
+                              action="{{ route('logout') }}">
+                            @csrf
 
-                        <a href="#"
-                           class="block px-4 py-2 text-sm text-gray-700"
-                           role="menuitem"
-                           tabindex="-1"
-                           id="user-menu-item-2">
-                            Sign out
-                        </a>
+                            <x-responsive-nav-link :href="route('logout')"
+                                                   onclick="event.preventDefault();
+                                                                this.closest('form').submit();">
+                                {{ __('Log Out') }}
+                            </x-responsive-nav-link>
+                        </form>
                     </div>
                 </div>
             </div>

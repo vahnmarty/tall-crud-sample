@@ -35,6 +35,11 @@ class ManageUsers extends Component
         $this->emit('openEditUser', $userId);
     }
 
+    public function changePassword($userId)
+    {
+        $this->emit('openChangePassword', $userId);
+    }
+
     public function deleteUser($userId)
     {
         User::destroy($userId);

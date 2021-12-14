@@ -1,6 +1,7 @@
 <div>
     @livewire('users.create-user')
     @livewire('users.edit-user')
+    @livewire('users.change-password')
     <header>
         <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="flex justify-between">
@@ -94,7 +95,7 @@
                                                 </svg>
                                             </button>
                                             <button type="button"
-                                                    wire:click="editUser('{{ $user->id }}')"
+                                                    wire:click="changePassword('{{ $user->id }}')"
                                                     class="inline-flex items-center px-1 py-1 text-sm text-yellow-500 bg-white border rounded-md shadow-sm hover:bg-gray-100">
                                                 <svg xmlns="http://www.w3.org/2000/svg"
                                                      class="w-4 h-4"
