@@ -45,6 +45,12 @@ class ManageUsers extends Component
         User::destroy($userId);
 
         $this->getUsers();
+
+        $this->emit('sweetalert2', [
+            'title' => 'User deleted',
+            'message' => 'User deleted successfully!',
+            'type' => 'success'
+        ]);
     }
 
 }

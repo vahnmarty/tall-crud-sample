@@ -57,5 +57,11 @@ class CreateUser extends Component
         $this->emitUp('getUsers');
 
         $this->reset();
+
+        $this->emit('sweetalert2', [
+            'title' => 'New User created',
+            'message' => '',
+            'type' => 'success'
+        ]);
     }
 }

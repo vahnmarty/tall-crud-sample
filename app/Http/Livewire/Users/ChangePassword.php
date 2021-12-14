@@ -43,6 +43,12 @@ class ChangePassword extends Component
         $this->reset();
 
         $this->emitUp('getUsers');
+
+        $this->emit('sweetalert2', [
+            'title' => 'New Password created',
+            'message' => 'Password updated successfully!',
+            'type' => 'success'
+        ]);
     }
     
 }

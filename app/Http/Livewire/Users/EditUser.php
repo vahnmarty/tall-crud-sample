@@ -61,6 +61,12 @@ class EditUser extends Component
         $this->reset();
 
         $this->emitUp('getUsers');
+
+        $this->emit('sweetalert2', [
+            'title' => 'User Updated successfully!',
+            'message' => '',
+            'type' => 'success'
+        ]);
     }
 
     public function updatedPhoto()
