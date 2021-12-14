@@ -1,5 +1,6 @@
 <div>
     @livewire('users.create-user')
+    @livewire('users.edit-user')
     <header>
         <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="flex justify-between">
@@ -75,7 +76,7 @@
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap">
                                             <div class="text-base font-bold text-blue-400">
-                                                {{ $user->name }}
+                                                {{ $user->email }}
                                             </div>
                                         </td>
                                         <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
@@ -83,6 +84,7 @@
                                         </td>
                                         <td class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
                                             <a href="#"
+                                               wire:click.prevent="editUser('{{ $user->id }}')"
                                                class="text-indigo-600 hover:text-indigo-900">Edit</a>
                                         </td>
                                     </tr>

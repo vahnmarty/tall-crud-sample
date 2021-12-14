@@ -30,4 +30,9 @@ class ManageUsers extends Component
         $this->emit('openCreateUser');
     }
 
+    public function editUser($userId)
+    {
+        $this->emit('openEditUser', $userId);
+    }
+
 }

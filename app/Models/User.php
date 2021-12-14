@@ -46,11 +46,8 @@ class User extends Authenticatable
 
     public function getAvatar()
     {
-        if ( $this->photo )
-        {
-            return Storage::url($this->photo);
-        }
-
-        return "https://ui-avatars.com/api/?name=" . $this->name;
+        return $this->photo
+                ? Storage::url($this->photo)
+                : "https://ui-avatars.com/api/?name=" . $this->name;
     }
 }

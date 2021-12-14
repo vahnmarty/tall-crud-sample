@@ -35,14 +35,14 @@
                 <div class="px-4 pt-5 pb-4 bg-gray-100 sm:p-6 sm:pb-4">
                     <h3 class="text-lg font-bold leading-6 text-gray-900"
                         id="modal-title">
-                        Create User
+                        Edit User
                     </h3>
                 </div>
                 <div class="px-4 pt-5 pb-4 bg-white sm:p-6 sm:pb-4">
                     <div>
                         @include('includes.partials.errors')
                         <div class="mt-2">
-                            <form id="createUser"
+                            <form id="editUser"
                                   wire:submit.prevent="save"
                                   class="space-y-4">
                                 <div>
@@ -70,36 +70,6 @@
                                                class="block w-full px-3 py-2 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                     </div>
                                 </div>
-                                <div class="grid grid-cols-2 gap-6">
-                                    <div>
-                                        <label for="password"
-                                               class="block text-sm font-medium text-gray-700">
-                                            Password
-                                        </label>
-                                        <div class="mt-1">
-                                            <input id="password"
-                                                   wire:model.defer="password"
-                                                   name="password"
-                                                   type="password"
-                                                   placeholder="*********"
-                                                   autocomplete="current-password"
-                                                   required
-                                                   class="block w-full px-3 py-2 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <label class="block text-sm font-medium text-gray-700">
-                                            Confirm Password
-                                        </label>
-                                        <div class="mt-1">
-                                            <input type="password"
-                                                   placeholder="*********"
-                                                   wire:model.defer="password_confirmation"
-                                                   required
-                                                   class="block w-full px-3 py-2 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                                        </div>
-                                    </div>
-                                </div>
                                 <div>
                                     <label for="photo"
                                            class="block text-sm font-medium text-gray-700">
@@ -107,7 +77,7 @@
                                         <x-loading target="photo" />
                                     </label>
                                     <div class="mt-2">
-                                        <label for="photo"
+                                        <label for="editphoto"
                                                class="flex items-center cursor-pointer">
                                             @if ($photo)
                                             <img src="{{ $photo->temporaryUrl() }}"
@@ -127,7 +97,7 @@
                                             </div>
                                         </label>
                                         <input type="file"
-                                               id="photo"
+                                               id="editphoto"
                                                accept="image/*"
                                                class="hidden"
                                                wire:model="photo">
@@ -140,7 +110,7 @@
                 </div>
                 <div class="px-4 py-3 bg-gray-100 sm:px-6 sm:flex sm:flex-row-reverse">
                     <button type="submit"
-                            form="createUser"
+                            form="editUser"
                             class="inline-flex justify-center w-full px-4 py-2 text-base font-medium text-white bg-red-600 border border-transparent rounded-md shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">
                         Save
                     </button>

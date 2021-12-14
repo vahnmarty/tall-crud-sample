@@ -8,7 +8,6 @@ use Livewire\WithFileUploads;
 
 class CreateUser extends Component
 {
-
     use WithFileUploads;
 
     public $isOpen = false;
