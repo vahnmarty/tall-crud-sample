@@ -35,4 +35,11 @@ class ManageUsers extends Component
         $this->emit('openEditUser', $userId);
     }
 
+    public function deleteUser($userId)
+    {
+        User::destroy($userId);
+
+        $this->getUsers();
+    }
+
 }
