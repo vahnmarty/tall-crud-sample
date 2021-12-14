@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'users'], function(){
+Route::group(['prefix' => 'users', 'middleware' => 'auth'], function(){
     Route::get('/', ManageUsers::class);
 });
 

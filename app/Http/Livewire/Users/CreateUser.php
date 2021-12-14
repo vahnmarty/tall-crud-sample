@@ -38,6 +38,8 @@ class CreateUser extends Component
     {
         $data = $this->validate();
 
+        $data['password'] = bcrypt($data['password']);
+
         User::create($data);
 
         $this->emitUp('getUsers');
